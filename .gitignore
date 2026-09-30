@@ -7,3 +7,6 @@ dist
 qa/shots/
 qa/edge/
 qa/visual/
+
+.vercel
+.env*
