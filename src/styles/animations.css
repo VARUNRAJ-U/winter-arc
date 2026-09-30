@@ -1,0 +1,83 @@
+/* =========================================================================
+   WINTER ARC · MOTION
+   Transform/opacity only. All non-essential motion is disabled when the
+   user prefers reduced motion, or turns motion off in Settings.
+   ========================================================================= */
+
+@keyframes wa-fade-up {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes wa-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes wa-scale-in {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes wa-spin { to { transform: rotate(360deg); } }
+@keyframes wa-breathe {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.95; transform: scale(1.04); }
+}
+@keyframes wa-pulse-glow {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.9; }
+}
+@keyframes wa-shimmer {
+  0% { transform: translateX(-120%); }
+  60%, 100% { transform: translateX(220%); }
+}
+@keyframes wa-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1.06); }
+  50% { transform: translate3d(0, -12px, 0) scale(1.09); }
+}
+@keyframes wa-rise {
+  from { transform: translate3d(0, 100%, 0); }
+  to { transform: none; }
+}
+@keyframes wa-snow {
+  from { transform: translate3d(0, -12vh, 0); opacity: 0; }
+  10% { opacity: var(--flake-opacity, 0.5); }
+  90% { opacity: var(--flake-opacity, 0.5); }
+  to { transform: translate3d(var(--flake-drift, 14px), 112vh, 0); opacity: 0; }
+}
+@keyframes wa-ember {
+  from { transform: translate3d(0, 0, 0) scale(0.6); opacity: 0; }
+  15% { opacity: 1; }
+  to { transform: translate3d(var(--ember-x, 0px), var(--ember-y, -180px), 0) scale(1.1); opacity: 0; }
+}
+@keyframes wa-ring-sweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes wa-bar-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* Entrance helpers */
+.wa-enter { animation: wa-fade-up var(--dur-slow) var(--ease-out) both; }
+.wa-enter-1 { animation-delay: 40ms; }
+.wa-enter-2 { animation-delay: 90ms; }
+.wa-enter-3 { animation-delay: 140ms; }
+.wa-enter-4 { animation-delay: 190ms; }
+.wa-enter-5 { animation-delay: 240ms; }
+.wa-enter-6 { animation-delay: 290ms; }
+
+/* Press feedback: opacity + scale only, never layout */
+.wa-press { transition: transform var(--dur-instant) var(--ease-out), opacity var(--dur-instant) var(--ease-out); }
+.wa-press:active:not(:disabled) { transform: scale(0.972); opacity: 0.88; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html[data-motion='off'] *,
+html[data-motion='off'] *::before,
+html[data-motion='off'] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}

@@ -1,0 +1,176 @@
+/* =========================================================================
+   WINTER ARC · DESIGN TOKENS
+   Single source of truth for colour, type, spacing, radius, blur and motion.
+   ========================================================================= */
+
+:root {
+  color-scheme: dark;
+
+  /* ---------- Backgrounds ---------- */
+  --bg-primary: #050b16;
+  --bg-secondary: #071426;
+  --bg-tertiary: #0a1b30;
+  --bg-elevated: #0c2038;
+  --bg-deep: #03070f;
+
+  /* ---------- Glass surfaces ---------- */
+  --glass-surface: rgba(12, 32, 56, 0.55);
+  --glass-surface-strong: rgba(10, 27, 48, 0.82);
+  --glass-surface-soft: rgba(18, 44, 74, 0.38);
+  --glass-border: rgba(120, 190, 255, 0.18);
+  --glass-border-strong: rgba(140, 210, 255, 0.34);
+  --glass-highlight: rgba(190, 232, 255, 0.08);
+
+  /* ---------- Accents ---------- */
+  --accent-blue: #2f8fff;
+  --accent-blue-deep: #1565d8;
+  --accent-cyan: #5ad2ff;
+  --accent-ice: #bfe9ff;
+  --accent-purple: #8b7cf6;
+  --accent-violet: #a78bfa;
+  --accent-mint: #34e0a1;
+  --accent-amber: #f5a524;
+  --accent-rose: #f4506b;
+
+  /* ---------- Text ---------- */
+  --text-primary: #eef7ff;
+  --text-secondary: #a9c3dc;
+  --text-muted: #6f8aa6;
+  --text-inverse: #04121f;
+
+  /* ---------- Pillar identity ---------- */
+  --pillar-workout: #4a9dff;
+  --pillar-diet: #35d6a0;
+  --pillar-studies: #9b8cff;
+  --pillar-sleep: #7fa8ff;
+
+  /* ---------- State ---------- */
+  --state-complete: #34e0a1;
+  --state-partial: #f5a524;
+  --state-missed: #f4506b;
+  --state-idle: rgba(150, 190, 225, 0.35);
+
+  /* ---------- Gradients ---------- */
+  --grad-primary: linear-gradient(135deg, #bfe9ff 0%, #7fd0ff 55%, #4aa8ff 100%);
+  --grad-ring: conic-gradient(from 180deg, #2f8fff, #5ad2ff, #bfe9ff, #5ad2ff, #2f8fff);
+  --grad-sheen: linear-gradient(180deg, rgba(190, 232, 255, 0.14), rgba(190, 232, 255, 0));
+  --grad-scrim: linear-gradient(180deg, rgba(3, 7, 15, 0) 0%, rgba(3, 7, 15, 0.55) 45%, rgba(3, 7, 15, 0.94) 100%);
+  --grad-scrim-top: linear-gradient(180deg, rgba(3, 7, 15, 0.85) 0%, rgba(3, 7, 15, 0.1) 100%);
+
+  /* ---------- Glow ---------- */
+  --glow-sm: 0 0 12px rgba(90, 210, 255, 0.28);
+  --glow-md: 0 0 24px rgba(74, 168, 255, 0.34);
+  --glow-lg: 0 0 48px rgba(74, 168, 255, 0.38);
+  --glow-ice: 0 0 32px rgba(191, 233, 255, 0.45);
+  --glow-mint: 0 0 18px rgba(52, 224, 161, 0.45);
+
+  /* ---------- Shadows ---------- */
+  --shadow-sm: 0 2px 8px rgba(2, 8, 18, 0.45);
+  --shadow-md: 0 10px 28px rgba(2, 8, 18, 0.5);
+  --shadow-lg: 0 24px 60px rgba(2, 8, 18, 0.6);
+
+  /* ---------- Blur ---------- */
+  --blur-sm: 8px;
+  --blur-md: 18px;
+  --blur-lg: 32px;
+
+  /* ---------- Radius ---------- */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --r-xl: 26px;
+  --r-2xl: 32px;
+  --r-pill: 999px;
+
+  /* ---------- Spacing (4 / 8 rhythm) ---------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-7: 32px;
+  --sp-8: 40px;
+  --sp-9: 48px;
+  --sp-10: 64px;
+
+  /* ---------- Typography ---------- */
+  --font-display: 'Outfit', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --fs-display: clamp(34px, 9.5vw, 42px);
+  --fs-h1: 28px;
+  --fs-h2: 22px;
+  --fs-h3: 18px;
+  --fs-body: 15px;
+  --fs-sm: 13px;
+  --fs-xs: 11px;
+  --fs-micro: 10px;
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-body: 1.55;
+  --ls-wide: 0.16em;
+  --ls-wider: 0.3em;
+
+  /* ---------- Motion ---------- */
+  --dur-instant: 90ms;
+  --dur-fast: 160ms;
+  --dur-base: 240ms;
+  --dur-slow: 420ms;
+  --dur-slower: 680ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ---------- Layout ---------- */
+  --app-max-width: 460px;
+  --gutter: 18px;
+  --nav-height: 62px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --nav-clearance: calc(var(--nav-height) + var(--safe-bottom) + 26px);
+  --z-bg: 0;
+  --z-content: 1;
+  --z-header: 30;
+  --z-nav: 40;
+  --z-sheet: 60;
+  --z-modal: 70;
+  --z-celebration: 90;
+  --z-toast: 100;
+}
+
+/* ---------- Accent themes (Appearance setting) ---------- */
+:root[data-accent='arctic'] { --accent-primary: var(--accent-cyan); --accent-secondary: var(--accent-blue); }
+:root[data-accent='aurora'] {
+  --accent-primary: #66f0c8; --accent-secondary: #4fb8ff;
+  --accent-cyan: #66f0c8; --accent-blue: #3fb6f5; --accent-ice: #c8fff0;
+  --grad-primary: linear-gradient(135deg, #c8fff0 0%, #66f0c8 55%, #3fb6f5 100%);
+  --grad-ring: conic-gradient(from 180deg, #3fb6f5, #66f0c8, #c8fff0, #66f0c8, #3fb6f5);
+  --glow-md: 0 0 24px rgba(102, 240, 200, 0.34);
+  --glow-lg: 0 0 48px rgba(102, 240, 200, 0.36);
+}
+:root[data-accent='ember'] {
+  --accent-primary: #ffb46b; --accent-secondary: #ff7a59;
+  --accent-cyan: #ffc78a; --accent-blue: #ff8f5e; --accent-ice: #ffe6cf;
+  --grad-primary: linear-gradient(135deg, #ffe6cf 0%, #ffb46b 55%, #ff7a59 100%);
+  --grad-ring: conic-gradient(from 180deg, #ff7a59, #ffb46b, #ffe6cf, #ffb46b, #ff7a59);
+  --glow-md: 0 0 24px rgba(255, 150, 100, 0.34);
+  --glow-lg: 0 0 48px rgba(255, 150, 100, 0.36);
+}
+:root[data-accent='violet'] {
+  --accent-primary: #c3b5ff; --accent-secondary: #8b7cf6;
+  --accent-cyan: #c3b5ff; --accent-blue: #7c6af0; --accent-ice: #e4dcff;
+  --grad-primary: linear-gradient(135deg, #e4dcff 0%, #c3b5ff 55%, #7c6af0 100%);
+  --grad-ring: conic-gradient(from 180deg, #7c6af0, #c3b5ff, #e4dcff, #c3b5ff, #7c6af0);
+  --glow-md: 0 0 24px rgba(160, 140, 255, 0.36);
+  --glow-lg: 0 0 48px rgba(160, 140, 255, 0.38);
+}
+
+/* ---------- Contrast boost (Accessibility setting) ---------- */
+:root[data-contrast='high'] {
+  --text-secondary: #d2e4f5;
+  --text-muted: #a6bed4;
+  --glass-border: rgba(150, 210, 255, 0.4);
+  --glass-surface: rgba(8, 24, 44, 0.9);
+  --glass-surface-strong: rgba(6, 18, 34, 0.95);
+}

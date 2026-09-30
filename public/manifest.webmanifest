@@ -1,0 +1,17 @@
+{
+  "name": "Winter Arc",
+  "short_name": "Winter Arc",
+  "description": "Winter Arc - a 90-day discipline system. Four pillars, one stronger you.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050B16",
+  "theme_color": "#050B16",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
